@@ -75,5 +75,17 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "cmdk": {
+      "react": "$react"
+    }
+  },
+  "pnpm": {
+    "overrides": {
+      "cmdk": {
+        "react": "$react"
+      }
+    }
   }
 }
