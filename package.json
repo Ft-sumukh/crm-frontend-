@@ -2,7 +2,6 @@
   "name": "shadcn-crm-dashboard",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@9.15.4",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -76,5 +75,10 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
   }
 }
