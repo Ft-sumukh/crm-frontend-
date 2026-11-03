@@ -51,7 +51,7 @@ export function SidebarSubmenuWrapper({ item, isPopover }: Props) {
     <SidebarMenuSub
       className={cn(
         isPopover && "mx-0 border-none px-0",
-        !isPopover && "border-primary/25",
+        !isPopover && "border-sidebar-foreground/20",
       )}
       role="menu"
       aria-label={`${item.title} submenu items`}
@@ -61,8 +61,8 @@ export function SidebarSubmenuWrapper({ item, isPopover }: Props) {
           <SidebarMenuSubButton
             asChild
             className={cn(
-              "hover:bg-primary/10 hover:text-primary transition-colors",
-              subItem.isActive && "font-bold text-primary underline underline-offset-4",
+              "hover:bg-sidebar-foreground/10 hover:text-sidebar-foreground transition-colors",
+              subItem.isActive && "font-bold text-sidebar-foreground underline underline-offset-4",
               isPopover && "px-4",
             )}
           >

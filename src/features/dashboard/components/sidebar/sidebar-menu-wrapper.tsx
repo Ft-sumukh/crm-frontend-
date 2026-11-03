@@ -70,8 +70,8 @@ export function SidebarMenuWrapper({ item }: Props) {
             <CollapsibleTrigger asChild>
               <SidebarMenuButton
                 className={cn(
-                  "cursor-pointer hover:bg-primary/10 hover:text-primary active:bg-transparent data-[state=open]:hover:bg-primary/10 transition-colors",
-                  isSubmenuActive && "font-bold text-primary",
+                  "cursor-pointer hover:bg-sidebar-foreground/10 hover:text-sidebar-foreground active:bg-transparent data-[state=open]:hover:bg-sidebar-foreground/10 transition-colors",
+                  isSubmenuActive && "font-bold text-sidebar-foreground",
                 )}
                 aria-label={item.title}
                 aria-expanded="false"
@@ -88,15 +88,15 @@ export function SidebarMenuWrapper({ item }: Props) {
           <HoverCardContent
             side="right"
             align="start"
-            className="w-fit min-w-52 px-0 border-primary/20 shadow-md"
+            className="w-fit min-w-52 px-0 border-border/50 shadow-md"
             role="menu"
             aria-label={`${item.title} submenu`}
           >
             <div className="flex flex-col gap-2">
               <div
                 className={cn(
-                  "flex items-center gap-2 border-b border-primary/20 px-4 pb-2",
-                  isSubmenuActive && "font-bold text-primary",
+                  "flex items-center gap-2 border-b border-border/50 px-4 pb-2",
+                  isSubmenuActive && "font-bold text-sidebar-foreground",
                 )}
               >
                 <item.icon
@@ -120,8 +120,8 @@ export function SidebarMenuWrapper({ item }: Props) {
         <SidebarMenuButton
           tooltip={item.title}
           className={cn(
-            "cursor-pointer hover:bg-primary/10 hover:text-primary active:bg-transparent data-[state=open]:hover:bg-primary/10 transition-colors",
-            isSubmenuActive && "font-bold text-primary",
+            "cursor-pointer hover:bg-sidebar-foreground/10 hover:text-sidebar-foreground active:bg-transparent data-[state=open]:hover:bg-sidebar-foreground/10 transition-colors",
+            isSubmenuActive && "font-bold text-sidebar-foreground",
           )}
           aria-label={item.title}
           aria-expanded="false"
@@ -138,7 +138,7 @@ export function SidebarMenuWrapper({ item }: Props) {
         <>
           <CollapsibleTrigger asChild>
             <SidebarMenuAction
-              className="cursor-pointer hover:bg-primary/10 hover:text-primary data-[state=open]:rotate-90 transition-all"
+              className="cursor-pointer hover:bg-sidebar-foreground/10 hover:text-sidebar-foreground data-[state=open]:rotate-90 transition-all"
               aria-label={`Toggle ${item.title} submenu`}
             >
               <ChevronRight aria-hidden="true" />

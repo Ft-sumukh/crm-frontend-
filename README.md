@@ -14,7 +14,7 @@ An ultra-premium CRM dashboard and landing page built with Next.js 15, React 19,
 
 ### Dashboard Views
 ![Dashboard Overview](public/app-screenshots/dashboard-1.png)
-![Dashboard Analytics](public/app-screenshots/dashboard-2.png)
+![Dashboard Orders](public/app-screenshots/dashboard-2.png)
 ![Dashboard Customers](public/app-screenshots/dashboard-3.png)
 
 ### Landing Page
@@ -23,8 +23,8 @@ An ultra-premium CRM dashboard and landing page built with Next.js 15, React 19,
 ### Mobile Experience
 <div style="display: flex; justify-content: space-between;">
   <img src="public/app-screenshots/mobile-1.png" alt="Mobile Dashboard" width="32%" />
-  <img src="public/app-screenshots/mobile-2.png" alt="Mobile Analytics" width="32%" />
-  <img src="public/app-screenshots/mobile-3.png" alt="Mobile Navigation" width="32%" />
+  <img src="public/app-screenshots/mobile-2.png" alt="Mobile Customers" width="32%" />
+  <img src="public/app-screenshots/mobile-3.png" alt="Mobile Landing" width="32%" />
 </div>
 
 ## Project Structure
