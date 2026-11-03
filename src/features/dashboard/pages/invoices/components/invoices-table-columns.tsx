@@ -15,11 +15,11 @@ const formatCurrency = (amount: number) => {
 };
 
 export const statusColors: Record<InvoiceStatus, string> = {
-  draft: "bg-slate-100 text-slate-800",
-  pending: "bg-yellow-100 text-yellow-800",
-  paid: "bg-green-100 text-green-800",
-  overdue: "bg-red-100 text-red-800",
-  cancelled: "bg-red-100 text-red-800",
+  draft: "bg-stone-100 text-stone-700 border border-stone-200 dark:bg-stone-900 dark:text-stone-300 dark:border-stone-800",
+  pending: "bg-amber-50 text-amber-800 border border-amber-200/80 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-800/40",
+  paid: "bg-emerald-50 text-emerald-800 border border-emerald-200/80 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/40",
+  overdue: "bg-rose-50 text-rose-800 border border-rose-200/80 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-800/40",
+  cancelled: "bg-rose-50 text-rose-800 border border-rose-200/80 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-800/40",
 };
 
 export const useInvoiceColumns = () => {
@@ -79,4 +79,4 @@ export const useInvoiceColumns = () => {
     ],
     []
   );
-}; 
+};

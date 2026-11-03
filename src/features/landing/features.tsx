@@ -52,7 +52,7 @@ const FeatureCard = ({ feature, index }: { feature: any; index: number }) => {
   return (
     <Card
       key={index}
-      className="border-border/50 bg-background/60 hover:border-primary/20 group overflow-hidden rounded-xl border p-1 transition-all duration-300 hover:shadow-lg"
+      className="border-primary/15 bg-background/80 hover:border-primary/40 group overflow-hidden rounded-xl border p-1 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/5"
     >
       <div className="relative p-5">
         <div
@@ -80,48 +80,48 @@ const features = [
     description:
       "AI-powered email management that automatically categorizes, prioritizes, and suggests responses.",
     icon: <Inbox className="h-7 w-7" aria-hidden="true" />,
-    bgColor: "rgba(59, 130, 246, 0.1)",
-    textColor: "rgb(59, 130, 246)",
+    bgColor: "rgba(197, 160, 89, 0.12)",
+    textColor: "rgb(180, 138, 42)",
   },
   {
     title: "Pipeline Analytics",
     description:
       "Real-time insights into your sales pipeline with AI-driven forecasting and recommendations.",
     icon: <BarChart3 className="h-7 w-7" aria-hidden="true" />,
-    bgColor: "rgba(234, 179, 8, 0.1)",
-    textColor: "rgb(234, 179, 8)",
+    bgColor: "rgba(212, 175, 55, 0.14)",
+    textColor: "rgb(190, 145, 35)",
   },
   {
     title: "Intelligent Automation",
     description:
       "Automate repetitive tasks and workflows with our powerful but easy-to-use automation engine.",
     icon: <Zap className="h-7 w-7" aria-hidden="true" />,
-    bgColor: "rgba(168, 85, 247, 0.1)",
-    textColor: "rgb(168, 85, 247)",
+    bgColor: "rgba(180, 138, 42, 0.12)",
+    textColor: "rgb(170, 128, 30)",
   },
   {
     title: "Customer Insights",
     description:
       "Get a 360° view of your customers with aggregated data from all touchpoints and interactions.",
     icon: <UserCheck className="h-7 w-7" aria-hidden="true" />,
-    bgColor: "rgba(34, 197, 94, 0.1)",
-    textColor: "rgb(34, 197, 94)",
+    bgColor: "rgba(197, 160, 89, 0.12)",
+    textColor: "rgb(180, 138, 42)",
   },
   {
     title: "Team Collaboration",
     description:
       "Work seamlessly with your team through shared workspaces, comments, and real-time updates.",
     icon: <Users2 className="h-7 w-7" aria-hidden="true" />,
-    bgColor: "rgba(249, 115, 22, 0.1)",
-    textColor: "rgb(249, 115, 22)",
+    bgColor: "rgba(212, 175, 55, 0.14)",
+    textColor: "rgb(190, 145, 35)",
   },
   {
     title: "Interactive Dashboard",
     description:
       "Customizable dashboards that display your most important metrics and KPIs at a glance.",
     icon: <LayoutDashboard className="h-7 w-7" aria-hidden="true" />,
-    bgColor: "rgba(14, 165, 233, 0.1)",
-    textColor: "rgb(14, 165, 233)",
+    bgColor: "rgba(180, 138, 42, 0.12)",
+    textColor: "rgb(170, 128, 30)",
   },
 ];
 
@@ -141,11 +141,11 @@ export function Features() {
         aria-hidden="true"
       ></div>
       <div
-        className="absolute top-1/4 left-1/4 -z-10 h-64 w-64 rounded-full bg-purple-500/20 blur-3xl"
+        className="absolute top-1/4 left-1/4 -z-10 h-64 w-64 rounded-full bg-amber-400/10 blur-3xl"
         aria-hidden="true"
       ></div>
       <div
-        className="absolute right-1/4 bottom-1/4 -z-10 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"
+        className="absolute right-1/4 bottom-1/4 -z-10 h-72 w-72 rounded-full bg-amber-500/10 blur-3xl"
         aria-hidden="true"
       ></div>
 
@@ -162,10 +162,10 @@ export function Features() {
         </div>
 
         {/* Feature highlight */}
-        <div className="border-border/50 bg-background/50 mt-24 rounded-xl border p-8 lg:p-10">
+        <div className="border-primary/25 bg-background/70 shadow-xs mt-24 rounded-xl border p-8 backdrop-blur-sm lg:p-10">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-12">
             <div
-              className="bg-primary/10 flex h-20 w-20 items-center justify-center rounded-lg md:h-24 md:w-24"
+              className="bg-primary/10 border-primary/20 flex h-20 w-20 items-center justify-center rounded-lg border md:h-24 md:w-24"
               aria-hidden="true"
             >
               <BrainCircuit className="text-primary h-10 w-10 md:h-12 md:w-12" />

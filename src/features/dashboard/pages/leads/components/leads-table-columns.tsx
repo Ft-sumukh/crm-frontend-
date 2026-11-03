@@ -8,11 +8,11 @@ import { ColumnDef } from "@tanstack/react-table";
 import { LeadActionsDropdown } from "./leads-actions-dropdown";
 
 export const statusColors: Record<LeadStatus, string> = {
-  new: "bg-blue-100 text-blue-800",
-  contacted: "bg-yellow-100 text-yellow-800",
-  qualified: "bg-green-100 text-green-800",
-  unqualified: "bg-red-100 text-red-800",
-  converted: "bg-purple-100 text-purple-800",
+  new: "bg-sky-50 text-sky-800 border border-sky-200/80 dark:bg-sky-950/40 dark:text-sky-300 dark:border-sky-800/40",
+  contacted: "bg-amber-50 text-amber-800 border border-amber-200/80 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-800/40",
+  qualified: "bg-emerald-50 text-emerald-800 border border-emerald-200/80 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/40",
+  unqualified: "bg-rose-50 text-rose-800 border border-rose-200/80 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-800/40",
+  converted: "bg-purple-50 text-purple-800 border border-purple-200/80 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-800/40",
 };
 
 export const formatCurrency = (amount: number) => {
@@ -52,12 +52,18 @@ export const useLeadColumns = () => {
       {
         accessorKey: "date",
         header: "Date",
-        cell: ({ row }) => format(new Date(row.getValue("date")), "PPp"),
+        cell: ({ row }) => (
+          <div>{format(new Date(row.getValue("date")), "MMM d, yyyy, h:mm a")}</div>
+        ),
       },
       {
-        accessorKey: "value",
+        accessorKey: "potentialValue",
         header: "Potential Value",
-        cell: ({ row }) => formatCurrency(row.getValue("value")),
+        cell: ({ row }) => (
+          <div className="font-medium">
+            {formatCurrency(row.getValue("potentialValue"))}
+          </div>
+        ),
       },
       {
         accessorKey: "status",
@@ -65,7 +71,10 @@ export const useLeadColumns = () => {
         cell: ({ row }) => {
           const status = row.getValue("status") as LeadStatus;
           return (
-            <Badge className={statusColors[status]}>
+            <Badge
+              className={statusColors[status]}
+              variant="outline"
+            >
               {status.charAt(0).toUpperCase() + status.slice(1)}
             </Badge>
           );
@@ -74,23 +83,13 @@ export const useLeadColumns = () => {
       {
         accessorKey: "source",
         header: "Source",
-        cell: ({ row }) => {
-          const source = row.getValue("source") as string;
-          return (
-            <div>
-              {source.split("_").map(word => 
-                word.charAt(0).toUpperCase() + word.slice(1)
-              ).join(" ")}
-            </div>
-          );
-        },
+        cell: ({ row }) => <div>{row.getValue("source")}</div>,
       },
       {
         id: "actions",
-        header: "",
         cell: ({ row }) => <LeadActionsDropdown lead={row.original} />,
       },
     ],
     []
   );
-}; 
+};

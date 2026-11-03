@@ -46,8 +46,8 @@ const PricingCard = ({ tier, index }: { tier: any; index: number }) => {
       className={cn(
         "relative flex flex-col justify-between overflow-hidden border transition-all duration-300 hover:shadow-lg",
         tier.popular
-          ? "border-primary shadow-md"
-          : "border-border/50 hover:border-primary/20",
+          ? "border-primary shadow-lg shadow-amber-500/10 ring-1 ring-primary/40"
+          : "border-primary/20 hover:border-primary/40",
       )}
     >
       {tier.popular && (
@@ -55,8 +55,8 @@ const PricingCard = ({ tier, index }: { tier: any; index: number }) => {
           className="absolute -top-10 -right-10 overflow-hidden"
           aria-label="Popular plan"
         >
-          <div className="bg-primary flex h-32 w-32 translate-x-2 -translate-y-2 rotate-45 items-center justify-center">
-            <span className="text-primary-foreground mt-16 text-sm font-semibold">
+          <div className="bg-gradient-to-r from-[#DFB76C] to-[#C5A059] flex h-32 w-32 translate-x-2 -translate-y-2 rotate-45 items-center justify-center shadow-xs">
+            <span className="text-stone-950 mt-16 text-sm font-bold tracking-wide">
               Popular
             </span>
           </div>
@@ -86,7 +86,7 @@ const PricingCard = ({ tier, index }: { tier: any; index: number }) => {
           {tier.features.map((feature: string, j: number) => (
             <li key={j} className="flex items-center gap-2.5">
               <div
-                className="bg-primary/10 flex h-5 w-5 items-center justify-center rounded-full"
+                className="bg-primary/10 border-primary/20 flex h-5 w-5 items-center justify-center rounded-full border"
                 aria-hidden="true"
               >
                 <Check className="text-primary h-3 w-3" />
@@ -100,6 +100,7 @@ const PricingCard = ({ tier, index }: { tier: any; index: number }) => {
         <Button
           className={cn(
             "h-12 w-full font-semibold tracking-wide",
+            tier.popular && "bg-primary text-primary-foreground hover:bg-primary/90 shadow-xs",
             tier.name === "Enterprise" ? "gap-2" : "",
           )}
           size="lg"
@@ -184,11 +185,11 @@ export function Pricing() {
         aria-hidden="true"
       ></div>
       <div
-        className="bg-primary/20 absolute top-1/4 left-1/4 -z-10 h-72 w-72 rounded-full blur-3xl"
+        className="bg-primary/15 absolute top-1/4 left-1/4 -z-10 h-72 w-72 rounded-full blur-3xl"
         aria-hidden="true"
       ></div>
       <div
-        className="absolute right-1/4 bottom-1/4 -z-10 h-72 w-72 rounded-full bg-yellow-500/20 blur-3xl"
+        className="absolute right-1/4 bottom-1/4 -z-10 h-72 w-72 rounded-full bg-amber-400/15 blur-3xl"
         aria-hidden="true"
       ></div>
 
@@ -205,7 +206,7 @@ export function Pricing() {
         </div>
 
         {/* Custom plan section */}
-        <div className="border-border/50 bg-background/50 mt-24 rounded-xl border p-8 text-center">
+        <div className="border-primary/20 bg-background/70 shadow-xs mt-24 rounded-xl border p-8 text-center backdrop-blur-sm">
           <h3 className="text-2xl font-bold tracking-tight" id="custom-plan">
             Need a Custom Plan?
           </h3>
@@ -214,7 +215,7 @@ export function Pricing() {
             specific requirements.
           </p>
           <Button
-            className="mt-8 h-14 px-8 font-semibold tracking-wide"
+            className="border-primary/40 hover:border-primary hover:bg-primary/5 mt-8 h-14 px-8 font-semibold tracking-wide"
             size="lg"
             variant="outline"
           >

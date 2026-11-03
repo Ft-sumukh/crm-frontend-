@@ -32,8 +32,8 @@ const NavLink = ({
       className={cn(
         "relative rounded-md px-4 py-2 text-sm font-medium tracking-wide transition-all",
         isActive
-          ? "bg-primary text-primary-foreground"
-          : "text-muted-foreground hover:bg-background/80 hover:text-foreground",
+          ? "bg-primary text-primary-foreground shadow-xs font-semibold"
+          : "text-muted-foreground hover:bg-primary/10 hover:text-foreground",
       )}
       aria-current={isActive ? "page" : undefined}
     >
@@ -52,7 +52,7 @@ export function Header() {
       {/* Desktop Header */}
       <header className="fixed inset-x-0 top-4 z-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="bg-background/90 border-border/30 relative rounded-full border shadow-lg backdrop-blur-xl">
+          <div className="bg-background/90 border-primary/20 relative rounded-full border shadow-md backdrop-blur-xl">
             <nav
               className="flex h-16 items-center justify-between px-4 sm:px-6"
               aria-label="Main navigation"
@@ -64,7 +64,7 @@ export function Header() {
                 aria-label="Piper homepage"
               >
                 <div className="flex items-center gap-2">
-                  <div className="bg-primary/10 flex h-8 w-8 items-center justify-center rounded-full">
+                  <div className="bg-primary/15 border-primary/25 flex h-8 w-8 items-center justify-center rounded-full border">
                     <Zap className="text-primary h-4 w-4" aria-hidden="true" />
                   </div>
                   <span className="text-lg font-bold tracking-tight">
@@ -88,11 +88,11 @@ export function Header() {
 
               {/* Desktop CTA */}
               <div className="hidden items-center gap-3 md:flex">
-                <Button variant="ghost" className="font-medium tracking-wide">
+                <Button variant="ghost" className="font-medium tracking-wide hover:bg-primary/10">
                   Sign in
                 </Button>
                 <Link href="/dashboard">
-                  <Button className="px-4 font-medium tracking-wide">
+                  <Button className="px-4 font-medium tracking-wide bg-primary text-primary-foreground hover:bg-primary/90 shadow-xs">
                     Get Started
                   </Button>
                 </Link>
@@ -103,7 +103,7 @@ export function Header() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="hover:bg-background/80 rounded-full p-2 transition-colors md:hidden"
+                className="hover:bg-primary/10 rounded-full p-2 transition-colors md:hidden"
                 aria-label="Toggle menu"
                 aria-expanded={isMenuOpen}
                 aria-controls="mobile-menu"
@@ -131,7 +131,7 @@ export function Header() {
             onClick={() => setIsMenuOpen(false)}
             aria-hidden="true"
           />
-          <div className="bg-background/95 border-border/50 fixed inset-x-0 top-0 border-b p-6">
+          <div className="bg-background/95 border-primary/20 fixed inset-x-0 top-0 border-b p-6">
             <div className="mt-20 flex flex-col gap-2 space-y-1">
               {navItems.map((item) => {
                 const hash = `#${item.toLowerCase()}`;
@@ -157,7 +157,7 @@ export function Header() {
                 </Button>
                 <Link href="/dashboard" className="w-full">
                   <Button
-                    className="w-full font-medium tracking-wide"
+                    className="w-full font-medium tracking-wide bg-primary text-primary-foreground hover:bg-primary/90 shadow-xs"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Get Started

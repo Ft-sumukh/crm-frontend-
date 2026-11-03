@@ -19,10 +19,10 @@ const HeroTitle = () => {
           <span className="inline-block">TURN INTERACTIONS INTO</span>
         </div>
         <div className="mt-1 block text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-          <span className="bg-primary text-primary-foreground relative inline-block px-4 py-1">
+          <span className="bg-gradient-to-r from-[#DFB76C] via-[#F3E5AB] to-[#C5A059] text-stone-950 font-black relative inline-block px-5 py-1.5 rounded-lg shadow-sm tracking-wide">
             REVENUE
           </span>
-          <span className="text-foreground ml-2 inline-block uppercase">
+          <span className="text-foreground ml-3 inline-block uppercase">
             Growth
           </span>
         </div>
@@ -37,14 +37,14 @@ const HeroTitle = () => {
 const BadgeLabel = ({ text }: { text: string }) => {
   return (
     <div
-      className="border-border bg-background mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm"
+      className="border-primary/25 bg-background/90 shadow-xs mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm backdrop-blur-sm"
       role="note"
     >
       <span
-        className="bg-primary flex h-2 w-2 rounded-full"
+        className="bg-primary flex h-2 w-2 rounded-full shadow-[0_0_8px_#D4AF37]"
         aria-hidden="true"
       ></span>
-      <span className="text-muted-foreground text-xs font-medium">{text}</span>
+      <span className="text-foreground/80 text-xs font-semibold tracking-wide">{text}</span>
     </div>
   );
 };
@@ -64,15 +64,18 @@ const CTAButton = ({
   icon?: React.ReactNode;
 }) => {
   const buttonClass = cn(
-    "h-16 px-8 text-base font-semibold tracking-wide uppercase sm:text-lg",
-    variant === "outline" && "hover:bg-background/5 border-2",
+    "h-16 px-8 text-base font-semibold tracking-wide uppercase sm:text-lg transition-all duration-300",
+    variant === "default" &&
+      "bg-gradient-to-r from-[#C5A059] to-[#B38A2A] hover:from-[#B89248] hover:to-[#A37B22] text-white shadow-lg shadow-amber-500/20 hover:shadow-xl hover:shadow-amber-500/30",
+    variant === "outline" &&
+      "border-primary/40 hover:border-primary hover:bg-primary/5 text-foreground border-2",
   );
 
   const button = (
     <Button size="lg" variant={variant as any} className={buttonClass}>
       {icon && (
         <span
-          className="bg-primary-foreground/10 mr-3 -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full"
+          className="bg-white/20 mr-3 -ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full"
           aria-hidden="true"
         >
           {icon}
@@ -105,11 +108,11 @@ export function Hero() {
         aria-hidden="true"
       ></div>
       <div
-        className="absolute top-0 right-0 -z-10 h-16 w-16 rounded-full bg-yellow-400/20 blur-2xl md:h-72 md:w-72"
+        className="absolute top-0 right-0 -z-10 h-24 w-24 rounded-full bg-amber-400/15 blur-3xl md:h-80 md:w-80"
         aria-hidden="true"
       ></div>
       <div
-        className="bg-primary/20 absolute bottom-16 left-0 -z-10 h-36 w-36 rounded-full blur-3xl"
+        className="bg-primary/15 absolute bottom-16 left-0 -z-10 h-44 w-44 rounded-full blur-3xl md:h-72 md:w-72"
         aria-hidden="true"
       ></div>
 
@@ -127,11 +130,11 @@ export function Hero() {
           <div className="relative mt-12 flex flex-col gap-5 sm:flex-row sm:gap-6">
             {/* Decorative elements around buttons */}
             <div
-              className="border-primary/30 absolute -top-4 -left-4 h-4 w-4 border-t-2 border-l-2"
+              className="border-primary/40 absolute -top-4 -left-4 h-4 w-4 border-t-2 border-l-2"
               aria-hidden="true"
             ></div>
             <div
-              className="border-primary/30 absolute -right-4 -bottom-4 h-4 w-4 border-r-2 border-b-2"
+              className="border-primary/40 absolute -right-4 -bottom-4 h-4 w-4 border-r-2 border-b-2"
               aria-hidden="true"
             ></div>
 
@@ -151,7 +154,7 @@ export function Hero() {
 
           {/* Stats bar */}
           <div
-            className="border-border/50 bg-background/50 mt-16 flex flex-wrap items-center justify-center gap-6 rounded-lg border p-4 sm:gap-10 md:gap-16"
+            className="border-primary/20 bg-background/80 shadow-xs mt-16 flex flex-wrap items-center justify-center gap-6 rounded-lg border p-4 backdrop-blur-md sm:gap-10 md:gap-16"
             aria-label="Key statistics"
           >
             <div className="text-center">
@@ -169,7 +172,7 @@ export function Hero() {
             <div className="text-center">
               <div className="flex items-center justify-center gap-1.5">
                 <LineChart
-                  className="h-4 w-4 text-yellow-500"
+                  className="h-4 w-4 text-primary"
                   aria-hidden="true"
                 />
                 <p className="text-lg font-bold">3.8M</p>
@@ -180,7 +183,7 @@ export function Hero() {
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center gap-1.5">
-                <Users className="h-4 w-4 text-green-500" aria-hidden="true" />
+                <Users className="h-4 w-4 text-primary" aria-hidden="true" />
                 <p className="text-lg font-bold">15k+</p>
               </div>
               <p className="text-muted-foreground text-xs">

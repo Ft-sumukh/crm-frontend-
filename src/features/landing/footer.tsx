@@ -28,7 +28,7 @@ const FooterLink = ({
 }) => (
   <Link
     href={href}
-    className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+    className="text-muted-foreground hover:text-primary transition-colors duration-200"
   >
     {children}
   </Link>
@@ -64,21 +64,21 @@ const navigation = {
   social: [
     {
       name: "X",
-      href: "https://x.com/KaraBharat",
-      openInNewTab: true,
+      href: "https://x.com",
       icon: XIcon,
+      openInNewTab: true,
     },
     {
       name: "GitHub",
-      href: "https://github.com/KaraBharat/shadcn-crm-dashboard",
-      openInNewTab: true,
+      href: "https://github.com",
       icon: GitHubIcon,
+      openInNewTab: true,
     },
     {
       name: "LinkedIn",
-      href: "https://www.linkedin.com/in/kara-bharat/",
-      openInNewTab: true,
+      href: "https://linkedin.com",
       icon: LinkedInIcon,
+      openInNewTab: true,
     },
   ],
 };
@@ -89,7 +89,7 @@ const navigation = {
 export function Footer() {
   return (
     <footer
-      className="border-border/50 relative border-t"
+      className="border-primary/20 relative border-t"
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
@@ -106,7 +106,7 @@ export function Footer() {
         aria-hidden="true"
       ></div>
       <div
-        className="absolute bottom-1/4 left-1/4 -z-10 h-64 w-64 rounded-full bg-yellow-500/10 blur-3xl"
+        className="absolute bottom-1/4 left-1/4 -z-10 h-64 w-64 rounded-full bg-amber-400/10 blur-3xl"
         aria-hidden="true"
       ></div>
 
@@ -115,7 +115,7 @@ export function Footer() {
           <div className="space-y-8">
             <div className="flex items-center">
               <div
-                className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg"
+                className="bg-primary/15 border-primary/25 flex h-12 w-12 items-center justify-center rounded-lg border"
                 aria-hidden="true"
               >
                 <Zap className="text-primary h-6 w-6" />
@@ -132,7 +132,7 @@ export function Footer() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-200"
                   aria-label={item.name}
                   target={item.openInNewTab ? "_blank" : "_self"}
                 >
@@ -190,8 +190,8 @@ export function Footer() {
           </div>
         </div>
         <div className="border-border/50 mt-12 border-t pt-8">
-          <p className="text-muted-foreground text-center text-sm">
-            &copy; {new Date().getFullYear()} Piper, Inc. All rights reserved.
+          <p className="text-muted-foreground text-sm">
+            &copy; {new Date().getFullYear()} Piper Technologies, Inc. All rights reserved.
           </p>
         </div>
       </div>

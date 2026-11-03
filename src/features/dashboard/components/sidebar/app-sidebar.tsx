@@ -50,18 +50,18 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton size="lg" asChild>
               <Link
                 href="/dashboard"
-                className="hover:bg-transparent"
+                className="hover:bg-primary/10 transition-colors"
                 aria-label="Go to dashboard home"
               >
                 <div
-                  className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg"
+                  className="bg-primary text-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg shadow-xs"
                   aria-hidden="true"
                 >
                   <Zap className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">Piper</span>
-                  <span className="truncate text-xs">Enterprise</span>
+                  <span className="truncate font-bold tracking-tight">Piper</span>
+                  <span className="truncate text-xs text-muted-foreground">Enterprise</span>
                 </div>
               </Link>
             </SidebarMenuButton>

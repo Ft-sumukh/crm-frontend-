@@ -8,10 +8,10 @@ import { ColumnDef } from "@tanstack/react-table";
 import { OrderActionsDropdown } from "./orders-actions-dropdown";
 
 export const statusColors: Record<OrderStatus, string> = {
-  pending: "bg-yellow-100 text-yellow-800",
-  processing: "bg-blue-100 text-blue-800",
-  completed: "bg-green-100 text-green-800",
-  cancelled: "bg-red-100 text-red-800",
+  pending: "bg-amber-50 text-amber-800 border border-amber-200/80 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-800/40",
+  processing: "bg-sky-50 text-sky-800 border border-sky-200/80 dark:bg-sky-950/40 dark:text-sky-300 dark:border-sky-800/40",
+  completed: "bg-emerald-50 text-emerald-800 border border-emerald-200/80 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/40",
+  cancelled: "bg-rose-50 text-rose-800 border border-rose-200/80 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-800/40",
 };
 
 export const formatCurrency = (amount: number) => {
@@ -46,12 +46,18 @@ export const useOrderColumns = () => {
       {
         accessorKey: "date",
         header: "Date",
-        cell: ({ row }) => format(new Date(row.getValue("date")), "PPp"),
+        cell: ({ row }) => (
+          <div>{format(new Date(row.getValue("date")), "MMM d, yyyy, h:mm a")}</div>
+        ),
       },
       {
         accessorKey: "amount",
         header: "Amount",
-        cell: ({ row }) => formatCurrency(row.getValue("amount")),
+        cell: ({ row }) => (
+          <div className="font-medium">
+            {formatCurrency(row.getValue("amount"))}
+          </div>
+        ),
       },
       {
         accessorKey: "status",
@@ -59,7 +65,10 @@ export const useOrderColumns = () => {
         cell: ({ row }) => {
           const status = row.getValue("status") as OrderStatus;
           return (
-            <Badge className={statusColors[status]}>
+            <Badge
+              className={statusColors[status]}
+              variant="outline"
+            >
               {status.charAt(0).toUpperCase() + status.slice(1)}
             </Badge>
           );
@@ -68,18 +77,10 @@ export const useOrderColumns = () => {
       {
         accessorKey: "items",
         header: "Items",
-        cell: ({ row }) => {
-          const items = row.getValue("items") as number;
-          return (
-            <div className="flex items-center gap-2">
-              <span>{items}</span> items
-            </div>
-          );
-        },
+        cell: ({ row }) => <div>{row.getValue("items")} items</div>,
       },
       {
         id: "actions",
-        header: "",
         cell: ({ row }) => <OrderActionsDropdown order={row.original} />,
       },
     ],
